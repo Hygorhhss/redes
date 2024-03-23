@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+body {
+    background: url('imagens/fundo-madeira.jpg') no-repeat top center; /*Sem repetir imagem, mostrando a imagem a partir do topo no centro*/
+    background-size: cover; /*cobrir a tela toda*/
+    background-attachment: fixed; /*Já está fixo, foi só para garantir*/
+}
+
+main {
+    position: relative;
+    height: 100vh;;
+}
+
+section#telefone {
+    position: absolute; /*A imagem é absoluta ao posicionamento relativo da tag <main>*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 627px;
+    width: 311px; /*Validar a largura da imagem (podnedo colocar uma cor de fundo para definir e optar no-repeat após a url)*/
+    background: url("imagens/frame-iphone.png") no-repeat; /*Colocar a imagem pela da url ao invés da tag <img> no CSS*/
+}
+
+section#redes-sociais {
+    
+}
+
+iframe#tela { /*toda a configuração do tamanho da imagem de fundo*/
+    position: relative;
+    top: 80px;
+    left: 22px;
+    width: 267px;
+    height:471px ;
+}
+
+section#redes-sociais { /*posicionamento dos botões*/
+    text-align: right;
+}
+
+section#redes-sociais img { /*Configuração dos botões*/
+    width: 50px;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.425);
+    box-sizing: border-box; /*A borda faz parte da caixa, deixando o hover individual*/
+}
+
+section#redes-sociais > a > img:hover { /*poderia ser no link <a>*/
+    border: 2px solid rgba(255, 255, 255, 0.459);
+    transform: translate(-3px, -3px); /*"relevo" ao passar o mouse no icone*/
+    box-shadow: 5px 5px 10px black; /*aumentar a sombra ao movimentar*/
+    transition: transform 0.1s, border 0.1s; /*Tempo de transição ao passar o mouse + a borda*/
+}
